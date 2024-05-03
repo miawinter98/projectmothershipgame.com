@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import { Picture } from 'astro:assets';
+import logo from "../img/logo.png";
+---
+<Layout title="Impressum">
+    <Picture class="h-36 md:h-48 min-h-0 min-w-0 object-contain object-left-top"
+             src={logo} alt="Project Mothership" formats={["webp","jpeg"]}
+             widths={[640, 720, 1080, 2560, logo.width]} />
+    <h1 class="text-3xl font-bold mb-3">
+		<span class="bg-gradient-to-br from-primary to-accent text-transparent bg-clip-text">
+			Impressum
+		</span>
+    </h1>
+    <section>
+        <h2 class="text-2xl font-bold leading-relaxed">Hochschule der Medien</h2>
+        <p class="whitespace-pre-wrap mb-6 leading-snug">Nobelstraße 10
+70569 Stuttgart
+0711-8923-10
+        </p>
+
+        <h2 class="text-2xl font-bold leading-relaxed">Projekt</h2>
+        <p class="mb-6 leading-snug">
+            Michelle Becher<br>
+            Mia Rose Winter<br>
+            <a href="mailto:contact@projectmothershipgame.com">contact@projectmothershipgame.com</a>
+        </p>
+    </section>
+</Layout>

@@ -1,7 +1,7 @@
 ---
 import '../styles/style.css';
 import LocaleSwitcher from "../components/LocaleSwitcher.astro";
-import { astroI18n, t } from "astro-i18n"
+import { astroI18n, t, l } from "astro-i18n"
 interface Props {
 	title: string;
 }
@@ -24,7 +24,7 @@ const { title } = Astro.props;
 	</head>
 	<body class="bg-background text-text">
 		<header class="font-pixel p-2 bg-secondary bg-opacity-25 flex justify-between items-center">
-			{t("page.title")}
+			<a class="hover:text-neutral-400 hover:underline" href={l("/")}>{t("page.title")}</a>
 			<LocaleSwitcher/>
 		</header>
 
@@ -36,6 +36,12 @@ const { title } = Astro.props;
 			<p>
 				&copy; 2024
 			</p>
+			<p>
+				<small>
+					<a class="text-neutral-100 hover:text-neutral-400 hover:underline" href={l("/impressum")}>Impressum</a>
+				</small>
+			</p>
+			<p> </p>
 		</footer>
 	</body>
 </html>
