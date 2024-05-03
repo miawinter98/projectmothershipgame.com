@@ -1,3 +1,17 @@
 {
-  "welcome": "Willkommen bei Project Mothership"
+  "welcome": "Willkommen bei Project Mothership",
+  "section": {
+    "intro": {
+      "title": "Über das Spiel",
+      "description": "Projekt Mothership ist als kooperatives Rogue-like mit Souls-inspiriertem Kampfsystem in einer top-down 2.5D perspective gedacht.\nDas Spiel wird von Studenten der Hochschule der Medien Stuttgart im Modul Game Praktikum entwickelt. Ein Team von 24 Studenten ist beauftragt ein Spiel zu entwickeln, dabei den Entwicklungsprozess eigenständig zu organisieren, und dieses dann an dem MediaNight Event der Hochschule zu demonstrieren."
+    },
+    "story": {
+      "title": "Geschichte",
+      "description": "Lorem Ipsum",
+      "imageAlt": "Illustration eines großen, spitzen Felsens. Links davon ist ein grauer Schatten von dem Felsen, rechts davon ein sehr kleiner schatten eines Astronauten"
+    },
+    "credits": {
+      "title": "Projektteam"
+    }
+  }
 }

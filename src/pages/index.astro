@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import { astroI18n, t } from "astro-i18n"
 import Section from "../components/Section.astro";
 
-import { Picture } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import logo from "../img/logo.png";
+import bigBoulder from "../img/big-boulder.jpeg";
 ---
 
 <Layout title={t("page.title")}>
@@ -16,15 +17,151 @@ import logo from "../img/logo.png";
 		</span>
 	</h1>
 
-	<Section title="test section"
-			 content=`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-			 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-			 accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-			 sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-			 elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-			 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-			 gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`>
+	<Section title={t("section.intro.title")} content={t("section.intro.description")}>
 		<Picture class="w-full object-contain object-top" src={logo} alt="Project Mothership"
 		         formats={["webp","jpeg"]} widths={[640, 720, 1080, 2560, logo.width]} />
 	</Section>
+
+	<Section title={t("section.story.title")} content={t("section.story.description")} inverse="true">
+		<Image class="w-full object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" src={bigBoulder} widths={[640, 720, 1080, 2560, bigBoulder.width]}
+			   alt={t("section.story.imageAlt")} />
+	</Section>
+
+	<section>
+		<h2 class="text-2xl font-bold leading-relaxed mb-4">{t("section.credits.title")}</h2>
+
+		<dl class="text-lg leading-snug columns-1 md:columns-2 lg:columns-3 gap-y-4 gap-x-8">
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Project Management</dt>
+				<dt class="font-bold">Marketing</dt>
+				<dd>Michelle Becher</dd>
+				<dd>Mia Rose Winter</dd>
+			</div>
+
+			<!-- Department: Game Design -->
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Head of Game Design</dt>
+				<dd>Tom Götz</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Lead of Game Design</dt>
+				<dd>Julius Steib</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Game Design</dt>
+				<dd>Julius Steib</dd>
+				<dd>Ferdinand Kubiak</dd>
+				<dd>Tobias Heim Galindo</dd>
+				<dd>Tom Götz</dd>
+				<dd>Benedek Lovas</dd>
+				<dd>Phuc Vo Hoang</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Story</dt>
+				<dd>Julius Steib</dd>
+				<dd>Tobias Heim Galindo</dd>
+				<dd>Ferdinand Kubiak</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Level Design</dt>
+				<dt class="font-bold">Puzzle Design</dt>
+				<dd>Julius Steib</dd>
+				<dd>Tobias Heim Galindo</dd>
+				<dd>Tom Götz</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Player Design</dt>
+				<dd>Tom Götz</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Enemy Design</dt>
+				<dd>Julius Steib</dd>
+				<dd>Tom Götz</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Sound Design</dt>
+				<dd>Julius Steib</dd>
+				<dd>Phuc Vo Hoang</dd>
+			</div>
+
+			<!-- Department: Engineering -->
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Head of Engineering</dt>
+				<dd>Marc Holderied</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Engineering</dt>
+				<dd>Hannes Ochs</dd>
+				<dd>Kevin Cipric</dd>
+				<dd>André Schwabauer</dd>
+				<dd>Kimberly Köhnke</dd>
+				<dd>Tim Breunig</dd>
+				<dd>Peter Gutjahr</dd>
+				<dd>Brunno Serra</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">UI</dt>
+				<dd>Peter Gutjahr</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Movement & Combat</dt>
+				<dd>Hannes Ochs</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Shaders & VFX</dt>
+				<dd>Marc Holderied</dd>
+			</div>
+
+			<!-- Department: GFX -->
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Lead Design</dt>
+				<dt class="font-bold">Head of Graphic Design</dt>
+				<dd>Benjamin Münster</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Graphic Design</dt>
+				<dd>Annalena Maria Hertkorn</dd>
+				<dd>Gabriela Gerhardt</dd>
+				<dd>Laura Krohmer</dd>
+				<dd>Jasmin Kitzig</dd>
+				<dd>Kevin Karsic</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">3D Modeling & Texturing</dt>
+				<dd>Annalena Maria Hertkorn</dd>
+				<dd>Laura Krohmer</dd>
+				<dd>Jasmin Kitzig</dd>
+				<dd>Kevin Karsic</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Animation</dt>
+				<dd>Annalena Maria Hertkorn</dd>
+				<dd>Jasmin Kitzig</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">UI Design</dt>
+				<dd>Benjamin Münster</dd>
+				<dd>Gabriela Gerhardt</dd>
+				<dd>Laura Krohmer</dd>
+			</div>
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">VFX Design</dt>
+				<dd>Jasmin Kitzig</dd>
+				<dd>Kevin Karsic</dd>
+			</div>
+
+			<!-- Department: Sound -->
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Head of Sound</dt>
+				<dd>Andreas Gantner</dd>
+			</div>
+
+			<!-- Department: QA -->
+			<div class="break-inside-avoid-column mb-4">
+				<dt class="font-bold">Head of Quality Assurance</dt>
+				<dd>Pluem Saengchan</dd>
+			</div>
+		</dl>
+
+	</section>
 </Layout>

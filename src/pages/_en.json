@@ -1,3 +1,17 @@
 {
-  "welcome": "Welcome to Project Mothership"
+  "welcome": "Welcome to Project Mothership",
+  "section": {
+    "intro": {
+      "title": "About the Game",
+      "description": "Project Mothership is intended to be a cooperative rogue-like with souls inspired combat in a top-down 2.5D stylised perspective.\nIt is developed by students of the Stuttgart Media University in the lecture Games Internship. A team of 24 students is tasked with developing a game, organizing the development process on their own, and to present it at the end of the semester at the Universities' MediaNight event.\n"
+    },
+    "story": {
+      "title": "Story",
+      "description": "Lorem Ipsum",
+      "imageAlt": "Illustration of a big, pointy boulder, with a shadow of itself to it's left, and a very tiny shadow of an astroneer to it's right"
+    },
+    "credits": {
+      "title": "Project Team"
+    }
+  }
 }
