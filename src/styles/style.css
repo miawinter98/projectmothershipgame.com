@@ -1,0 +1,22 @@
+@import '@fontsource/pixelify-sans';
+@import '@fontsource/chakra-petch';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --primary: 237 149 41;
+        --secondary: 53 71 105;
+        --accent: 207 50 23;
+        --background: 9 13 20;
+        --text: 255 255 255;
+    }
+}
+@layer utilities {
+    .bg-clip-slated {
+        clip-path: polygon(1.5rem 0, calc(100% - 1.5rem) 0%, 100% 100%, 0% 100%);
+        @apply px-12;
+    }
+}

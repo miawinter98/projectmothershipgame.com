@@ -1,0 +1,42 @@
+---
+import { astroI18n, t, l } from "astro-i18n"
+import Dropdown from "./Dropdown.astro";
+
+interface Props {
+    showCurrent: boolean
+    labels: {
+        [locale: string]: string
+    }
+}
+
+const { showCurrent = true, labels = {} } = Astro.props
+
+const params: Record<string, string> = {}
+for (const [key, value] of Object.entries(Astro.params)) {
+    if (value === undefined) continue
+    params[key] = String(value)
+}
+
+let links = astroI18n.locales.map((locale) => ({
+    locale,
+    href: l(Astro.url.pathname, params, {
+        targetLocale: locale,
+    }),
+    label: labels[locale] || locale.toUpperCase(),
+}))
+
+if (!showCurrent) {
+    links = links.filter((link) => link.locale !== astroI18n.locale)
+}
+---
+<Dropdown label={t("languages.switcher")}>
+    <ul>
+        {
+            links.map(({ href, label }) => (
+                <li class="hover:text-black">
+                    <a class="block" href={href}>{t("languages." + label)}</a>
+                </li>
+            ))
+        }
+    </ul>
+</Dropdown>

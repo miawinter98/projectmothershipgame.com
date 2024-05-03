@@ -1,0 +1,15 @@
+---
+interface Props {
+    label: string
+}
+
+const { label } = Astro.props;
+---
+<details class="font-sans relative bg-gradient-to-br from-primary to-accent text-white rounded">
+    <summary class="list-none py-0.5 px-8 cursor-pointer select-none rounded hover:text-black">
+        {label}
+    </summary>
+    <div class="absolute top-full right-0 p-2 w-44 my-1 bg-gradient-to-br from-primary to-accent text-white rounded">
+        <slot />
+    </div>
+</details>

@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { astroI18n, t } from "astro-i18n"
+import Section from "../components/Section.astro";
+
+import { Picture } from 'astro:assets';
+import logo from "../img/logo.png";
+---
+
+<Layout title={t("page.title")}>
+	<div class="flex justify-center">
+	</div>
+	<h1 class="text-3xl font-bold mb-3">
+		<span class="bg-gradient-to-br from-primary to-accent text-transparent bg-clip-text">
+			{t("welcome")}
+		</span>
+	</h1>
+
+	<Section title="test section"
+			 content=`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
+			 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+			 accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+			 sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+			 elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+			 diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+			 gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`>
+		<Picture class="w-full object-contain object-top" src={logo} alt="Project Mothership"
+		         formats={["webp","jpeg"]} widths={[640, 720, 1080, 2560, logo.width]} />
+	</Section>
+</Layout>
