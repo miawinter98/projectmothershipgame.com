@@ -18,12 +18,12 @@ import bigBoulder from "../img/big-boulder.jpeg";
 	</h1>
 
 	<Section title={t("section.intro.title")} content={t("section.intro.description")}>
-		<Picture class="w-full object-contain object-top" src={logo} alt="Project Mothership"
+		<Picture class="w-full min-w-0 object-contain object-top" src={logo} alt="Project Mothership"
 		         formats={["webp","jpeg"]} widths={[640, 720, 1080, 2560, logo.width]} />
 	</Section>
 
 	<Section title={t("section.story.title")} content={t("section.story.description")} inverse="true">
-		<Image class="w-full object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" src={bigBoulder} widths={[640, 720, 1080, 2560, bigBoulder.width]}
+		<Image class="w-full min-w-0 object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" src={bigBoulder} widths={[640, 720, 1080, 2560, bigBoulder.width]}
 			   alt={t("section.story.imageAlt")} />
 	</Section>
 
