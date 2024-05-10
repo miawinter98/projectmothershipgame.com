@@ -5,7 +5,7 @@ import Section from "../components/Section.astro";
 
 import { Image, Picture } from 'astro:assets';
 import logo from "../img/logo.png";
-import bigBoulder from "../img/big-boulder.jpeg";
+import crashedSpaceship from "../img/crashed-spaceship-conceptart.png"
 ---
 
 <Layout title={t("page.title")}>
@@ -23,14 +23,14 @@ import bigBoulder from "../img/big-boulder.jpeg";
 	</Section>
 
 	<Section title={t("section.story.title")} content={t("section.story.description")} inverse="true">
-		<Image class="w-full min-w-0 object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" src={bigBoulder} widths={[640, 720, 1080, 2560, bigBoulder.width]}
+		<Image class="w-full min-w-0 object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" src={crashedSpaceship} widths={[640, 720, crashedSpaceship.width]}
 			   alt={t("section.story.imageAlt")} />
 	</Section>
 
-	<section>
+	<section class="text-center">
 		<h2 class="text-2xl font-bold leading-relaxed mb-4">{t("section.credits.title")}</h2>
 
-		<dl class="text-lg leading-snug columns-1 md:columns-2 lg:columns-3 gap-y-4 gap-x-8">
+		<dl class="text-lg leading-snug columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-y-4 gap-x-8">
 			<div class="break-inside-avoid-column mb-4">
 				<dt class="font-bold">Project Management</dt>
 				<dt class="font-bold">Marketing</dt>
