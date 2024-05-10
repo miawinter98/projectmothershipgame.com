@@ -8,13 +8,13 @@ interface Props {
 const { title, content, inverse = false } = Astro.props;
 ---
 
-<section class="min-h-40 grid grid-cols-1 gap-2 md:grid-cols-3">
+<section class="min-h-40 grid grid-cols-1 md:grid-cols-3 gap-2 items-start">
     <div class="md:col-span-2 bg-secondary bg-opacity-25 p-4 bg-clip-slated">
         <h2 class="text-2xl font-bold leading-relaxed">{title}</h2>
 
-        <p class="text-justify leading-snug whitespace-pre-wrap">{content}</p>
+        <p class="text-justify leading-snug hyphens-auto whitespace-pre-wrap">{content}</p>
     </div>
-    <aside class="hidden md:flex" class:list={[{"order-first": inverse}]}>
+    <aside class="flex" class:list={[{"md:order-first": inverse}]}>
         <slot />
     </aside>
 </section>
