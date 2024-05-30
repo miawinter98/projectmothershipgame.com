@@ -9,6 +9,8 @@ import crashedSpaceship from "../img/crashed-spaceship-conceptart.png"
 import SocialPost from "../components/SocialPost.astro";
 
 import Post1 from "../img/social/Post1.png"
+import Post2 from "../img/social/Post2.png"
+import Post3 from "../img/social/Post3.png"
 ---
 
 <Layout title={t("page.title")}>
@@ -31,41 +33,74 @@ import Post1 from "../img/social/Post1.png"
 	</Section>
 
 	<section class="columns-md gap-8">
+		<SocialPost title="About the Game Praktikum" date={new Date("2024-05-30")}>
+			<figure slot="image">
+				<Image src={Post3} alt="The two playable characters engineer and scout"
+					   class="object-cover w-full"/>
+			</figure>
+			<p class="my-2 leading-snug">
+				As we all know, the game is being produced as an internal project by students of the Hochschule der Medien (Stuttgart Media University). 🎓
+			</p>
+			<p class="my-2 leading-snug">
+				As usual, project teams only belong to one course of studies. In this project, however, students from different courses, semesters and master’s or bachelor’s degrees form a team of more than 20 students who work together on the creation of this game. 🎮
+			</p>
+			<p class="my-2 leading-snug">
+				The team is divided into 5 departments: Project Management, Game Design, Graphics, Sound, Engineering and Quality Assurance, just like a small company. Our professor is part of the team, but only as a supervisor and helper - the structure, ideas and project management are all done by the students.📓💻
+			</p>
+			<p class="my-2 leading-snug">
+				This project is a fun way to learn about how software projects are structured in real life, about teamwork and communication, and about self-organisation.👩‍💻👨‍💻
+			</p>
+		</SocialPost>
+		<SocialPost title="Where did the idea of the game originate from?" date={new Date("2024-05-30")}>
+			<figure slot="image">
+				<Image src={Post2} alt="Early concept art of ab astronaut with scientific equipment"
+					   class="object-cover w-full"/>
+			</figure>
+			<p class="my-2 leading-snug">
+				Where did the idea of the game originate from? 🤓
+			</p>
+			<hr>
+			<p class="my-2 leading-snug">
+				The idea of the game started with one sentence by our current Graphics Head Benni: „Game about an astronaut that flies around in space discovering planets and fighting against their living conditions.“ 👨‍🚀👩‍🚀
+			</p>
+			<p class="my-2 leading-snug">
+				His original idea a couple years ago was a single player exploring and survival game. In the course of time the storyline was further developed to an astronaut being sent to space for research purposes. His first landing has failed and the mothership got destroyed so the astronaut has to build a base and fly to nearby planets with a small ship collecting resources to repair the big mothership that can bring him home. 🚀
+			</p>
+			<p class="my-2 leading-snug">
+				This idea was brought into our lecture and we as a team decided to change the idea a bit to create a nice co-op game with souls like elements.💡
+			</p>
+			<p class="my-2 leading-snug">
+				Note: The original idea and drawings belong to Benjamin Münster.
+			</p>
+			<p class="my-2 leading-snug">
+				© Hochschule der Medien, 2024
+			</p>
+		</SocialPost>
 		<SocialPost title="What is the Game about?" date={new Date("2024-05-30")}>
 			<figure slot="image">
 				<Image src={Post1} alt="Logo of project mothership"
 					   class="object-cover w-full"/>
 			</figure>
+			<p class="my-2 leading-snug">
+				The game we are currently developing is called Project Mothership. But what is it about? 🎮
+			</p>
+			<hr>
+			<p class="my-2 leading-snug">
+				The „undefined humanoid species“ (UHS) used AI to win an intergalactic war. This led to the creation of „Omniscius Machina“, a super-brain-like AI structure, that eventually developed a mind of its own and saw the UHS as its enemy. It started to wipe out the UHS, but was stopped just in time. 🤖
+			</p>
+			<p class="my-2 leading-snug">
+				The game’s main characters are astronauts sent on a mission to clean up after humanity. They travel across the galaxy in their Mothership that needs repair. The characters visit war-torn planets to destroy any war machines. 🚀
+			</p>
+			<p class="my-2 leading-snug">
+				The Mothership was the most powerful of all the warships used in the great final battle against Omniscius Machina, and its on-board computer seems to be obsessed with a certain planet named ‚sal_03x3‘. No one really understands these high-powered computing units anymore, as they were built during the long-gone technological golden age under the reign of Omniscius Machina. So the duo was sent to this planet, not really knowing what is down there. While investigating, they encounter massive crystals emitting waves of mysterious energy. 🪐💎
+			</p>
+			<p class="my-2 leading-snug">
+				This energy seems to attract the old machines of war as well as the native wildlife of the planet. It seems to fuse the two more and more, creating a mix of biological matter and machinery that behaves differently than the parts it is made of. It’s almost as if this fusion has given them a mind of their own, as if they were always meant to be that way...🛸
+			</p>
+			<p class="my-2 leading-snug">
+				© Hochschule der Medien, 2024
+			</p>
 
-			<h3 class="font-bold">Background Story</h3>
-			<p class="my-2 leading-snug">
-				The "undefined humanoid species" (UHS) used AI to win an intergalactic war.
-				This led to the creation of "omniscius machina", a super-brain-like AI structure
-				that controls UHS development. Eventually, the omniscius machina developed a mind
-				of its own and saw the UHS as its enemy. It started to wipe out the UHS, but was
-				stopped just in time.
-			</p>
-			<h3 class="font-bold">How is the player involved in this?</h3>
-			<p class="my-2 leading-snug">
-				The game's main characters are astronauts sent on a mission to clean up after
-				humanity by the Salvis Mechanicus - a group of space engineers. They travel
-				across the galaxy in a their mothership that needs repair. They visit war-torn
-				planets and destroy any war machines. These machines of war seem mindless, but
-				the player learns they are probably not...
-				<br>
-				The motherships' onboard computer seems to be obsessed with a certain planet.
-				No one seems to understand these high-powered computing units so the Salvis
-				Mechanicus sends an engineer to investigate. Upon investigation the engineer
-				finds crystals emitting mysterious energy.
-			</p>
-			<h3 class="font-bold">The big question throughout the game</h3>
-			<p class="my-2 leading-snug">
-				As the player encounters and destroys more and more old machines of war they start
-				to notice that there seems to be some kind of intelligence still left in them.
-				This calls into question the very morality of the main characters' mission:
-				They clean up after humanity and help the natives because they did not want
-				to be part of this war - but did the machines of war?
-			</p>
 		</SocialPost>
 	</section>
 
