@@ -1,0 +1,28 @@
+---
+import { astroI18n, t } from "astro-i18n"
+
+interface Props {
+    title: string,
+    date?: Date
+}
+
+const { title, date } = Astro.props;
+---
+
+<article class="bg-secondary border-2 border-secondary w-full rounded-sm mb-3 break-inside-avoid-column">
+    <slot name="image" />
+
+    <div class="p-2">
+        <h2 class="text-3xl mb-3">{title}</h2>
+
+        <slot />
+
+        {
+            date ? <p class="mt-6 text-sm text-right">{date.toLocaleString(astroI18n.locale, {
+                year: "numeric",
+                month:"long",
+                day: "numeric",
+            })}</p> : ""
+        }
+    </div>
+</article>

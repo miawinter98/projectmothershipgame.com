@@ -6,6 +6,9 @@ import Section from "../components/Section.astro";
 import { Image, Picture } from 'astro:assets';
 import logo from "../img/logo.png";
 import crashedSpaceship from "../img/crashed-spaceship-conceptart.png"
+import SocialPost from "../components/SocialPost.astro";
+
+import Post1 from "../img/social/Post1.png"
 ---
 
 <Layout title={t("page.title")}>
@@ -26,6 +29,45 @@ import crashedSpaceship from "../img/crashed-spaceship-conceptart.png"
 		<Image class="w-full min-w-0 object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" src={crashedSpaceship} widths={[640, 720, crashedSpaceship.width]}
 			   alt={t("section.story.imageAlt")} />
 	</Section>
+
+	<section class="columns-md gap-8">
+		<SocialPost title="What is the Game about?" date={new Date("2024-05-30")}>
+			<figure slot="image">
+				<Image src={Post1} alt="Logo of project mothership"
+					   class="object-cover w-full"/>
+			</figure>
+
+			<h3 class="font-bold">Background Story</h3>
+			<p class="my-2 leading-snug">
+				The "undefined humanoid species" (UHS) used AI to win an intergalactic war.
+				This led to the creation of "omniscius machina", a super-brain-like AI structure
+				that controls UHS development. Eventually, the omniscius machina developed a mind
+				of its own and saw the UHS as its enemy. It started to wipe out the UHS, but was
+				stopped just in time.
+			</p>
+			<h3 class="font-bold">How is the player involved in this?</h3>
+			<p class="my-2 leading-snug">
+				The game's main characters are astronauts sent on a mission to clean up after
+				humanity by the Salvis Mechanicus - a group of space engineers. They travel
+				across the galaxy in a their mothership that needs repair. They visit war-torn
+				planets and destroy any war machines. These machines of war seem mindless, but
+				the player learns they are probably not...
+				<br>
+				The motherships' onboard computer seems to be obsessed with a certain planet.
+				No one seems to understand these high-powered computing units so the Salvis
+				Mechanicus sends an engineer to investigate. Upon investigation the engineer
+				finds crystals emitting mysterious energy.
+			</p>
+			<h3 class="font-bold">The big question throughout the game</h3>
+			<p class="my-2 leading-snug">
+				As the player encounters and destroys more and more old machines of war they start
+				to notice that there seems to be some kind of intelligence still left in them.
+				This calls into question the very morality of the main characters' mission:
+				They clean up after humanity and help the natives because they did not want
+				to be part of this war - but did the machines of war?
+			</p>
+		</SocialPost>
+	</section>
 
 	<section class="text-center">
 		<h2 class="text-2xl font-bold leading-relaxed mb-4">{t("section.credits.title")}</h2>
