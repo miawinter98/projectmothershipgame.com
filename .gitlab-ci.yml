@@ -2,12 +2,10 @@
 image: node:18
 # Functions that should be executed before the build script is run
 before_script:
-  - mkdir -p public
   - npm i
 pages:
   script:
     - npm run build
-    - mv dist/* public/
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
