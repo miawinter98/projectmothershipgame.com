@@ -11,6 +11,8 @@ import SocialPost from "../components/SocialPost.astro";
 import Post1 from "../img/social/Post1.png"
 import Post2 from "../img/social/Post2.png"
 import Post3 from "../img/social/Post3.png"
+import Post4_Img1 from "../img/social/Post4/Img1.png"
+import Post4_Img2 from "../img/social/Post4/Img2.png"
 ---
 
 <Layout title={t("page.title")}>
@@ -33,6 +35,59 @@ import Post3 from "../img/social/Post3.png"
 	</Section>
 
 	<section class="columns-md gap-8">
+		<SocialPost title="The Main Characters" date={new Date("2024-06-14")}>
+			<figure slot="image" class="relative">
+				<div class="absolute left-0 right-0 bottom-6 ">
+					<div class="flex justify-center gap-4 text-secondary">
+						<a href="#Post4-Img1" class="hover:text-primary carousel-button">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+								<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z" clip-rule="evenodd" />
+							</svg>
+						</a>
+						<a href="#Post4-Img2" class="hover:text-primary carousel-button">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+								<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="w-full aspect-square snap-x scroll-smooth overflow-hidden">
+					<div class="w-full">
+						<Image src={Post4_Img1} alt="" id="Post4-Img1"
+							   class="snap-center object-cover w-full" />
+						<Image src={Post4_Img2} alt="" id="Post4-Img2"
+							   class="snap-center object-cover w-full" />
+					</div>
+				</div>
+			</figure>
+			<p class="my-2 leading-snug">
+				In this post, we’re thrilled to introduce you to the two main characters of our game! 🎮
+			</p>
+			<p class="my-2 leading-snug">
+				Let’s start with the Engineer. Tough, strong and resilient, the Engineer helps you
+				shape the environment to your advantage.
+				<br>
+				Their suit is resistant to high temperatures, so they can traverse hot territories
+				with ease. With their strong thermal hammer, the Engineer is a force to be reckoned
+				with!🔥
+			</p>
+			<p class="my-2 leading-snug">
+				Next, we have the Scout. A character that breathes electricity and is ready to take
+				on any challenge!
+				<br>
+				With their suit, the scout is resistant to electrical fields and with their Volt Spade
+				they are able to harness electricity to power up machinery and skewer threats. Even
+				though their stature is quite small, the Scout’s abilities are strong. ⚡️
+			</p>
+			<p class="my-2 leading-snug">
+				With these two characters, Project Mothership will be a great co-op adventure! You and
+				your co-player will be able to help each other in diverse situations, defeat enemies
+				and hopefully get to the mothership.🚀
+			</p>
+			<p class="my-2 leading-snug">
+				&copy; Hochschule der Medien, 2024
+			</p>
+		</SocialPost>
 		<SocialPost title="About the Game Praktikum" date={new Date("2024-05-30")}>
 			<figure slot="image">
 				<Image src={Post3} alt="The two playable characters engineer and scout"
@@ -284,3 +339,38 @@ import Post3 from "../img/social/Post3.png"
 		</div>
 	</section>
 </Layout>
+
+<script>
+	function doCarouselScroll(event: MouseEvent) {
+		const a = event.currentTarget as HTMLAnchorElement;
+		if (!a) {
+			console.log("[warning] failed carousel scroll: not an anchor element");
+			return;
+		}
+		const link = (a.attributes["href"] as Attr).value as string;
+		if (!link) {
+			console.log("[warning] failed carousel scroll: doesn't contain href tag");
+			return;
+		}
+		if (link[0] != "#") {
+			console.log(`[warning] failed carousel scroll: href link is not anchor navigation: ${link}`);
+			return;
+		}
+
+		const target = document.getElementById(link.substring(1)) as HTMLElement;
+		if (!target) {
+			console.log(`[warning] failed carousel scroll: could not find element with id ${link}`);
+			return;
+		}
+		target.scrollIntoView({
+			behavior: "smooth",
+			block: "nearest",
+			inline: "start"
+		});
+		event.preventDefault();
+	}
+	const carouselButtons = document.querySelectorAll("a.carousel-button");
+	for (let elem of carouselButtons) {
+		elem.addEventListener("click", doCarouselScroll);
+	}
+</script>
