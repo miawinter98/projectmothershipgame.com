@@ -13,6 +13,8 @@ import Post2 from "../img/social/Post2.png"
 import Post3 from "../img/social/Post3.png"
 import Post4_Img1 from "../img/social/Post4/Img1.png"
 import Post4_Img2 from "../img/social/Post4/Img2.png"
+import Post5 from "../img/social/Post5.png"
+import Post6 from "../img/social/Post6/cutscene.mp4"
 ---
 
 <Layout title={t("page.title")}>
@@ -35,6 +37,38 @@ import Post4_Img2 from "../img/social/Post4/Img2.png"
 	</Section>
 
 	<section class="columns-md gap-8">
+		<SocialPost title="" date={new Date("2024-06-26")}>
+			<figure slot="image">
+				<video controls class="w-full aspect-video">
+					<source src={Post6} type="video/mp4">
+				</video>
+			</figure>
+
+			<p class="my-2 leading-snug">
+				And like this our story begins… 🚀
+			</p>
+			<hr />
+			<p class="my-2 leading-snug">
+				Take a look at our first cut scene. Are you curious about how the journey of our astronauts continues?
+			</p>
+			<p class="my-2 leading-snug">
+				© Hochschule der Medien, 2024
+			</p>
+		</SocialPost>
+		<SocialPost title="Our New Logo" date={new Date("2024-06-21")}>
+			<figure slot="image">
+				<Image src={Post5} alt="" class="object-cover w-full"/>
+			</figure>
+			<p class="my-2 leading-snug">
+				Say hello to our new logo!
+			</p>
+			<p class="my-2 leading-snug">
+				Like every project, ours is evolving constantly. That’s why our graphics team worked on a new logo that represents our project as good as possible! 🤩
+			</p>
+			<p class="my-2 leading-snug">
+				© Hochschule der Medien, 2024
+			</p>
+		</SocialPost>
 		<SocialPost title="The Main Characters" date={new Date("2024-06-14")}>
 			<figure slot="image" class="relative">
 				<div class="absolute left-0 right-0 bottom-6 ">
@@ -104,6 +138,9 @@ import Post4_Img2 from "../img/social/Post4/Img2.png"
 			</p>
 			<p class="my-2 leading-snug">
 				This project is a fun way to learn about how software projects are structured in real life, about teamwork and communication, and about self-organisation.👩‍💻👨‍💻
+			</p>
+			<p class="my-2 leading-snug">
+				© Hochschule der Medien, 2024
 			</p>
 		</SocialPost>
 		<SocialPost title="Where did the idea of the game originate from?" date={new Date("2024-05-30")}>
