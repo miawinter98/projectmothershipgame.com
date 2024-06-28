@@ -29,54 +29,19 @@ import Project_Mothership from "../img/social/Project_Mothership.mp4"
 		</span>
 	</h1>
 
-	<Section title={t("section.intro.title")} content={t("section.intro.description")}>
+	<Section title={t("section.intro.title")} content={t("section.intro.description")} inverse={false}>
 		<Picture class="w-full min-w-0 object-contain object-top" src={logo} alt="Project Mothership"
 		         formats={["webp","jpeg"]} widths={[640, 720, 1080, 2560]} />
 	</Section>
 
-	<Section title={t("section.story.title")} content={t("section.story.description")} inverse="true">
-		<Image class="w-full min-w-0 object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" src={crashedSpaceship} widths={[640, 720, crashedSpaceship.width]}
+	<Section title={t("section.story.title")} content={t("section.story.description")} inverse={true}>
+		<Image class="w-full min-w-0 object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" 
+			   src={crashedSpaceship} widths={[640, 720, crashedSpaceship.width]}
 			   alt={t("section.story.imageAlt")} />
 	</Section>
 
-
 	<section class="columns-md gap-8">
-		<SocialPost title="" date={new Date("2024-06-26")}>
-			<figure slot="image">
-				<Image src={lol} alt="" class="object-cover w-full"/>
-			</figure>
-
-			<p class="my-2 leading-snug">
-				For our planet, the game design and art team use their creative minds to create a beautiful world experience. 🎨
-
-				They not only create the concept art, but also the illustrations, textures and 3D models. The assets are then ready to be incorporated into our game.
-
-				But what can you see on our planet? You start with the astronauts‘ spaceship, pointy salt pillars and bone-like structures that lead you to the quartz refinery. There you will see glowing quartz crystals and discover abandoned, decaying factories and pipes. The monolithic drilling outposts in the factory were used to ruthlessly mine the crystals before the war. 🗺️
-			</p>
-			<hr />
-			<p class="my-2 leading-snug">
-				© Hochschule der Medien, 2024
-			</p>
-		</SocialPost>
-		<SocialPost title="" date={new Date("2024-06-26")}>
-			<figure slot="image">
-				<video controls class="w-full aspect-video">
-					<source src={Post6} type="video/mp4">
-				</video>
-			</figure>
-
-			<p class="my-2 leading-snug">
-				And like this our story begins… 🚀
-			</p>
-			<hr />
-			<p class="my-2 leading-snug">
-				Take a look at our first cut scene. Are you curious about how the journey of our astronauts continues?
-			</p>
-			<p class="my-2 leading-snug">
-				© Hochschule der Medien, 2024
-			</p>
-		</SocialPost>
-		<SocialPost title="" date={new Date("2024-06-26")}>
+		<SocialPost title="Enemies" date={new Date("2024-06-28")}>
 			<figure slot="image">
 				<Image src={Armadillo} alt="" class="object-cover w-full"/>
 			</figure>
@@ -95,7 +60,24 @@ import Project_Mothership from "../img/social/Project_Mothership.mp4"
 				© Hochschule der Medien, 2024
 			</p>
 		</SocialPost>
-		<SocialPost title="" date={new Date("2024-06-26")}>
+		<SocialPost title="Game Design" date={new Date("2024-06-28")}>
+			<figure slot="image">
+				<Image src={lol} alt="" class="object-cover w-full"/>
+			</figure>
+
+			<p class="my-2 leading-snug">
+				For our planet, the game design and art team use their creative minds to create a beautiful world experience. 🎨
+
+				They not only create the concept art, but also the illustrations, textures and 3D models. The assets are then ready to be incorporated into our game.
+
+				But what can you see on our planet? You start with the astronauts‘ spaceship, pointy salt pillars and bone-like structures that lead you to the quartz refinery. There you will see glowing quartz crystals and discover abandoned, decaying factories and pipes. The monolithic drilling outposts in the factory were used to ruthlessly mine the crystals before the war. 🗺️
+			</p>
+			<hr />
+			<p class="my-2 leading-snug">
+				© Hochschule der Medien, 2024
+			</p>
+		</SocialPost>
+		<SocialPost title="Gameplay Preview" date={new Date("2024-06-27")}>
 			<figure slot="image">
 				<video controls class="w-full aspect-video">
 					<source src={Project_Mothership} type="video/mp4">
@@ -110,6 +92,24 @@ import Project_Mothership from "../img/social/Project_Mothership.mp4"
 				Wow, what a game! 🎮
 				Take a look at what our team has achieved in the last three months.
 				With creative game design, beautiful art and thrilling sounds they created a nice atmosphere. Of course we cannot forget the brilliant engineering and our smart quality assurance that made a working game possible. Last but not least, our project management made sure our team did not sink into chaos.
+			</p>
+			<p class="my-2 leading-snug">
+				© Hochschule der Medien, 2024
+			</p>
+		</SocialPost>
+		<SocialPost title="Intro Cutscene" date={new Date("2024-06-26")}>
+			<figure slot="image">
+				<video controls class="w-full aspect-video">
+					<source src={Post6} type="video/mp4">
+				</video>
+			</figure>
+
+			<p class="my-2 leading-snug">
+				And like this our story begins… 🚀
+			</p>
+			<hr />
+			<p class="my-2 leading-snug">
+				Take a look at our first cut scene. Are you curious about how the journey of our astronauts continues?
 			</p>
 			<p class="my-2 leading-snug">
 				© Hochschule der Medien, 2024
