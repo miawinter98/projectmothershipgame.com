@@ -46,8 +46,29 @@ import Post9_Img2 from "../img/social/Post9/Img2.png"
 
 	<section class="columns-md gap-8">
 		<SocialPost title="Enemies" date={new Date("2024-06-28")}>
-			<figure slot="image">
-				<Image src={Post9_Img1} alt="" class="object-cover w-full"/>
+			<figure slot="image" class="relative">
+				<div class="absolute left-0 right-0 bottom-6 ">
+					<div class="flex justify-center gap-4 text-secondary">
+						<a href="#Post9-Img1" class="hover:text-primary carousel-button">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+								<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z" clip-rule="evenodd" />
+							</svg>
+						</a>
+						<a href="#Post9-Img2" class="hover:text-primary carousel-button">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+								<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="w-full aspect-square snap-x scroll-smooth overflow-hidden">
+					<div class="w-full">
+						<Image src={Post9_Img1} alt="" id="Post9-Img1"
+							   class="snap-center object-cover w-full" />
+						<Image src={Post9_Img2} alt="" id="Post9-Img2"
+							   class="snap-center object-cover w-full" />
+					</div>
+				</div>
 			</figure>
 
 			<p class="my-2 leading-snug">
@@ -77,8 +98,43 @@ import Post9_Img2 from "../img/social/Post9/Img2.png"
 			</p>
 		</SocialPost>
 		<SocialPost title="Game Design" date={new Date("2024-06-28")}>
-			<figure slot="image">
-				<Image src={Post8_Img1} alt="" class="object-cover w-full"/>
+			<figure slot="image" class="relative">
+				<div class="absolute left-0 right-0 bottom-6 ">
+					<div class="flex justify-center gap-4 text-secondary">
+						<a href="#Post8-Img1" class="hover:text-primary text-accent carousel-button">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+								<path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12" clip-rule="evenodd" />
+							</svg>
+						</a>
+						<a href="#Post8-Img2" class="hover:text-primary text-accent carousel-button">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+								<path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12" clip-rule="evenodd" />
+							</svg>
+						</a>
+						<a href="#Post8-Img3" class="hover:text-primary text-accent carousel-button">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+								<path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12" clip-rule="evenodd" />
+							</svg>
+						</a>
+						<a href="#Post8-Img4" class="hover:text-primary text-accent carousel-button">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+								<path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12" clip-rule="evenodd" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="w-full aspect-square snap-x scroll-smooth overflow-hidden">
+					<div class="w-full">
+						<Image src={Post8_Img1} alt="" id="Post8-Img1"
+							   class="snap-center object-cover w-full" />
+						<Image src={Post8_Img2} alt="" id="Post8-Img2"
+							   class="snap-center object-cover w-full" />
+						<Image src={Post8_Img3} alt="" id="Post8-Img3"
+							   class="snap-center object-cover w-full" />
+						<Image src={Post8_Img4} alt="" id="Post8-Img4"
+							   class="snap-center object-cover w-full" />
+					</div>
+				</div>
 			</figure>
 
 			<p class="my-2 leading-snug">
