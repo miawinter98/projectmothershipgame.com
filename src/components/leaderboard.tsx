@@ -17,33 +17,30 @@ function LeaderboardEntry(props: {entry:LeaderboardEntry}) {
 }
 
 export default function Leaderboard(props: {title: string}) {
-    if (new Date("2024-07-04T17:30:00+02:00") > new Date()){
-        return (<></>);
-    }
-
     let [loading, setLoading] = useState(false);
     let [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
 
     function updateLeaderboard(){
         if (loading) return;
         setLoading(true);
-        fetch(new URL("https://api.projectmothershipgame.com/leaderboard?count=25"), {
+        fetch("https://api.projectmothershipgame.com/leaderboard", {
             method: "GET"
         }).then(result => {
             if (result.ok) {
                 if (result.status == 200) {
                     return result.json();
                 } else if (result.status == 204) {
-                    return []
-                } else {
-                    throw new Error("Unexpected result from API call: " + result.status);
+                    return [];
                 }
             }
+            throw new Error("Unexpected result from API call: " + result.status);
         }).then(data => {
-            setLeaderboard(l => ([...data]));
-            setLoading(false)
-        }).catch(err => {
-            setLoading(false)
+            if (!data) return;
+            setLeaderboard(_ => ([...data]));
+            setLoading(false);
+        }).catch(() => {
+            setLoading(false);
+            setLeaderboard([]);
         });
     }
 
@@ -51,6 +48,10 @@ export default function Leaderboard(props: {title: string}) {
         setLoading(true);
         setLeaderboard([]);
         setTimeout(() => updateLeaderboard(), 500);
+    }
+
+    if (new Date("2024-07-04T17:30:00+02:00") > new Date()){
+        return (<></>);
     }
 
     useEffect(() => {
