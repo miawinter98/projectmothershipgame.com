@@ -13,5 +13,8 @@
     "credits": {
       "title": "Projektteam"
     }
+  },
+  "leaderboard": {
+    "title": "Bestenliste"
   }
 }

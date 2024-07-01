@@ -8,7 +8,7 @@ type SecondaryLocale = "de"
 type Locale = PrimaryLocale | SecondaryLocale
 type RouteParameters = {"/impressum":undefined;"/":undefined;}
 type Route = keyof RouteParameters
-type TranslationVariables = {"welcome":object|undefined;"section.intro.title":object|undefined;"section.intro.description":object|undefined;"section.story.title":object|undefined;"section.story.description":object|undefined;"section.story.imageAlt":object|undefined;"section.credits.title":object|undefined;"page.title":object|undefined;"languages.EN":object|undefined;"languages.DE":object|undefined;"languages.switcher":object|undefined;}
+type TranslationVariables = {"welcome":object|undefined;"section.intro.title":object|undefined;"section.intro.description":object|undefined;"section.story.title":object|undefined;"section.story.description":object|undefined;"section.story.imageAlt":object|undefined;"section.credits.title":object|undefined;"leaderboard.title":object|undefined;"page.title":object|undefined;"languages.EN":object|undefined;"languages.DE":object|undefined;"languages.switcher":object|undefined;}
 type Translation = keyof TranslationVariables
 type Environment = "none"|"node"|"browser"
 declare module "astro-i18n" {

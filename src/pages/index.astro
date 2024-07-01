@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { astroI18n, t } from "astro-i18n"
 import Section from "../components/Section.astro";
+import Leaderboard from "../components/leaderboard"
 
 import { Image, Picture } from 'astro:assets';
 import logo from "../img/logo.png";
@@ -32,6 +33,8 @@ import Post9_Img2 from "../img/social/Post9/Img2.png"
 			{t("welcome")}
 		</span>
 	</h1>
+
+	<Leaderboard title={t("leaderboard.title")} client:load />
 
 	<Section title={t("section.intro.title")} content={t("section.intro.description")} inverse={false}>
 		<Picture class="w-full min-w-0 object-contain object-top" src={logo} alt="Project Mothership"
