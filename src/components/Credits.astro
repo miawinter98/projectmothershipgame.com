@@ -1,0 +1,108 @@
+---
+import {t} from "astro-i18n";
+
+const credits = [
+    {
+        "title": "Supervision",
+        "members": {
+            "Stefan Radicke": ["Product Owner"]
+        }
+    },
+    {
+        "title": "Project Management",
+        "members": {
+            "Michelle Becher": ["Department Head", "Marketing"],
+            "Mia Rose Winter": ["Department Lead", "Marketing"]
+        }
+    },
+    {
+        "title": "Game Design",
+        "members": {
+            "Tom Götz": [
+                "Department Head",
+                "Player Character",
+                "Enemy",
+                "Game Mechanics"
+            ],
+            "Julius Steib": [
+                "Department Lead",
+                "Player Character",
+                "Enemy",
+                "Game Mechanics"
+            ],
+            "Tobias Heim Galindo": ["Level Design"],
+            "Hoang Phuc Vo": ["User Interface", "Level Design"],
+            "Benedek Lovas": ["User Interface"],
+            "Ferdinand Kubiak": ["Story"]
+        }
+    },
+    {
+        "title": "Graphics",
+        "members": {
+            "Benjamin Münster": ["Department Head", "2D Concept Art", "Character Animation"],
+            "Gabriela Gerhardt": ["2D Concept Art", "User Interface"],
+            "Annalena Maria Hertkorn": ["2D Concept Art", "Modelling and Animation"],
+            "Laura Krohmer": ["2D Concept Art"],
+            "Jasmin Kitzig": ["3D Modelling", "Character Rigging and Animation"],
+            "Kevin Karsic": ["3D Modelling", "Character Rigging and Animation"]
+        }
+    },
+    {
+        "title": "Engineering",
+        "members": {
+            "Marc Holderied": ["Department Head", "Shader and VFX"],
+            "Hannes Ochs": ["User Interface"],
+            "Kevin Cipric": ["Movement & Combat"],
+            "André Schwabauer": ["Movement & Combat"],
+            "Kimberly Köhnke": ["Environment Interactions", "Coop mechanics"],
+            "Tim Breunig": ["Environment Interactions", "Coop mechanics"],
+            "Peter Gutjahr": ["Enemies"],
+            "Brunno Serra": ["Enemies"]
+        }
+    },
+    {
+        "title": "Quality Assurance",
+        "members": {
+            "Pluem Saengchan": ["Department Head"]
+        }
+    },
+    {
+        "title": "Sound",
+        "members": {
+            "Andreas Ganter": ["Department Head", "Soundtrack"],
+            "Hoang Phuc Vo": ["Environment", "User Interface", "Enemy"],
+            "Julius Steib": ["Player Character", "Enemy"]
+        }
+    },
+    {
+        "title": "Music",
+        "members": {
+            "Andreas Ganter": [],
+            "Mia Rose Winter": []
+        }
+    }
+]
+---
+<section class="text-center">
+    <h2 class="text-2xl font-bold leading-relaxed mb-4">{t("section.credits.title")}</h2>
+
+    <div class="leading-snug columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-x-4">
+        {
+            credits.map(h =>
+                    <div>
+                        <h3 class="text-xl font-bold leading-relaxed mb-2 font-pixel text-primary">
+                            {h.title}
+                        </h3>
+                        <dl>
+                            {Object.entries(h.members)
+                                .map(([name, titles]) =>
+                                    <div class="break-inside-avoid-column mb-3">
+                                        <>{titles.map(t => <dt class="text-sm uppercase text-neutral-300">{t}</dt>)}</>
+                                        <dd class="font-bold text-lg">{name}</dd>
+                                    </div>
+                                )}
+                        </dl>
+                    </div>)
+        }
+    </div>
+</section>
