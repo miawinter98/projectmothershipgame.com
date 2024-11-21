@@ -1,7 +1,80 @@
 ---
 import {t} from "astro-i18n";
 
-const credits = [
+interface DepartmentCredits {
+    "title": string,
+    "members": Record<string, string[]>
+}
+
+// noinspection JSNonASCIINames
+const credits2 : DepartmentCredits[] = [
+    {
+        "title": "Supervision",
+        "members": {
+            "Stefan Radicke": ["Product Owner"]
+        }
+    },
+    {
+        "title": "Project Manangement",
+        "members": {
+            "Mia Rose Winter": ["Department Head", "Marketing"]
+        }
+    },
+    {
+        "title": "Game Design",
+        "members": {
+            "Alexander Schrag": ["Department Head", "Game Mechanics"]
+        }
+    },
+    {
+        "title": "Graphics",
+        "members": {
+            "Niklas Mäckle": ["Department Head", "3D Modelling"],
+            "Tim Lange": [""],
+            "Jan Philipp Sievers": ["3D Modelling"],
+            "Hwei Yi Soh": ["2D Concept Art", "Background Design Mothership"],
+            "Alessa Wiesner": ["Level Design"]
+        }
+    },
+    {
+        "title": "Engineering",
+        "members": {
+            "Marvin Tran": ["Department Head"],
+            "Timo Eberl": ["Department Lead", "CI/CD"],
+            "Steven Aschenbrenner": ["CI/CD"],
+            "Michael Asmus": ["Optimization", "Procedural Animation"],
+            "Abel Bernardo": ["Optimization"],
+            "Ferris Phillippi": ["Optimization"],
+            "Henry Ruß": ["Camera", "Sound Integration"],
+            "Marcel Triebe": ["Shader and VFX"],
+        }
+    },
+    {
+        "title": "Sound",
+        "members": {
+            "Calum Baird": ["Department Head", "Sound Design"],
+            "Parra Rivera Candela": ["Sound Design"],
+            "Hoang Phuc Vo": ["Soundtrack"],
+        }
+    },
+    {
+        "title": "Quality Assurance",
+        "members": {
+            "Abd Algani Khrfan": ["Department Head"],
+            "Hugh Craig": []
+        }
+    },
+    {
+        "title": "Advisor",
+        "members": {
+            "Benjamin Münster": ["Former Creative Lead", "Game Design Advisor"],
+            "Pluem Saengchan": ["Game Design Advisor"]
+        }
+    }
+]
+
+// noinspection JSNonASCIINames
+const credits : DepartmentCredits[] = [
     {
         "title": "Supervision",
         "members": {
@@ -86,9 +159,15 @@ const credits = [
 <section class="text-center">
     <h2 class="text-2xl font-bold leading-relaxed mb-4">{t("section.credits.title")}</h2>
 
-    <div class="leading-snug columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-x-4">
         {
-            credits.map(h =>
+            [
+                {"Semester": "Semester 2024/25", "Credits": credits2},
+                {"Semester": "Semester 2024", "Credits": credits}
+            ].map(data =>
+            <h3 class="text-xl font-bold leading-relaxed mb-2">{data.Semester}</h3>
+            <div class="leading-snug columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-x-4 mb-6">
+                {
+                    data.Credits.map(h =>
                     <div>
                         <h3 class="text-xl font-bold leading-relaxed mb-2 font-pixel text-primary">
                             {h.title}
@@ -96,13 +175,15 @@ const credits = [
                         <dl>
                             {Object.entries(h.members)
                                 .map(([name, titles]) =>
-                                    <div class="break-inside-avoid-column mb-3">
-                                        <>{titles.map(t => <dt class="text-sm uppercase text-neutral-300">{t}</dt>)}</>
-                                        <dd class="font-bold text-lg">{name}</dd>
-                                    </div>
+                                        <div class="break-inside-avoid-column mb-3">
+                                            <>{titles.map(t => <dt class="text-sm uppercase text-neutral-300">{t}</dt>)}</>
+                                            <dd class="font-bold text-lg">{name}</dd>
+                                        </div>
                                 )}
                         </dl>
                     </div>)
+                }
+            </div>
+            )
         }
-    </div>
 </section>
