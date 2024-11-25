@@ -7,7 +7,6 @@ import Leaderboard from "../components/leaderboard"
 
 import { Image, Picture } from 'astro:assets';
 import logo from "../img/logo.png";
-import crashedSpaceship from "../img/crashed-spaceship-conceptart.png"
 import SocialPost from "../components/SocialPost.astro";
 
 import Post1 from "../img/social/Post1.png"
@@ -35,15 +34,9 @@ import Post9_Img2 from "../img/social/Post9/Img2.png"
 		</span>
 	</h1>
 
-	<Section title={t("section.intro.title")} content={t("section.intro.description")} inverse={false}>
+	<Section title={t("section.intro.title")} content={t("section.intro.description")} inverse={true}>
 		<Picture class="w-full min-w-0 object-contain object-top" src={logo} alt="Project Mothership"
 		         formats={["webp","jpeg"]} widths={[640, 720, 1080, 2560]} />
-	</Section>
-
-	<Section title={t("section.story.title")} content={t("section.story.description")} inverse={true}>
-		<Image class="w-full min-w-0 object-contain object-center rounded m-6 p-2 bg-gradient-to-br from-primary to-accent bg-clip-padding" 
-			   src={crashedSpaceship} widths={[640, 720, crashedSpaceship.width]}
-			   alt={t("section.story.imageAlt")} />
 	</Section>
 
 	<section class="columns-md gap-8 mb-4">

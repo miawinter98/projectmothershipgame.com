@@ -2,8 +2,8 @@
 import {t} from "astro-i18n";
 
 interface DepartmentCredits {
-    "title": string,
-    "members": Record<string, string[]>
+    title: string,
+    members: Record<string, string[]>
 }
 
 // noinspection JSNonASCIINames
@@ -30,9 +30,9 @@ const credits2 : DepartmentCredits[] = [
         "title": "Graphics",
         "members": {
             "Niklas Mäckle": ["Department Head", "3D Modelling"],
-            "Tim Lange": [""],
+            "Tim Lange": ["Animation"],
             "Jan Philipp Sievers": ["3D Modelling"],
-            "Hwei Yi Soh": ["2D Concept Art", "Background Design Mothership"],
+            "Hwee Yi Soh": ["2D Concept Art", "Background Design Mothership"],
             "Alessa Wiesner": ["Level Design"]
         }
     },
@@ -156,9 +156,9 @@ const credits : DepartmentCredits[] = [
     }
 ]
 ---
+
 <section class="text-center">
     <h2 class="text-2xl font-bold leading-relaxed mb-4">{t("section.credits.title")}</h2>
-
         {
             [
                 {"Semester": "Semester 2024/25", "Credits": credits2},
