@@ -3,15 +3,12 @@
   "section": {
     "intro": {
       "title": "Über das Spiel",
-      "description": "Projekt Mothership ist als kooperatives Rogue-like mit Souls-inspiriertem Kampfsystem in einer top-down 2.5D perspective gedacht.\nDas Spiel wird von Studenten der Hochschule der Medien Stuttgart im Modul Game Praktikum entwickelt. Ein Team von 24 Studenten ist beauftragt ein Spiel zu entwickeln, dabei den Entwicklungsprozess eigenständig zu organisieren, und dieses dann an dem MediaNight Event der Hochschule zu demonstrieren."
-    },
-    "story": {
-      "title": "Geschichte",
-      "description": "Dein Mutterschiff benötigt dringend Reparaturen, du und dein Mitstreiter müssen diesen feindlichen Planeten untersuchen, der deinen Bordcomputer auf eine seltsame Art anzieht. Als Mitglieder hochqualifizierter Kundschafter und Ingenieure liegt es an euch beiden genug Ressourcen zu sammeln, um euer Schiff wieder zum Laufen zu bringen, während ihr mit der feindlichen Umgebung und eventuell Kriegsmaschinen eines lange vergangenen Krieges auf diesen Planeten Kämpft, welche jeden Humanoid angreifen, den sie zu Gesicht bekommen. Zeit ist knapp, da ihr nicht wisst wie lange die Konditionen auf diesen Planeten stabil genug sind, um euch das abheben sicher zu ermöglichen. Könnt ihr genug Ressourcen sammeln, herausfinden was auf sal_03x3 vor sich geht, und es rechtzeitig in einem Stück zurückschaffen?",
-      "imageAlt": "Konzeptzeichnung eines gelandeten Raumschiffes in einer Steinwüste"
+      "description": "In diesem kooperativen Action-Adventure begeben sich Spieler auf eine intergalaktische Reise, bei der Teamwork, Erkundung und das Lösen von Rätseln der Schlüssel zum Erfolg sind. Das Spiel dreht sich um euer Mutterschiff. Arbeitet zusammen, um geheimnisvolle Planeten zu erkunden und knifflige Rätsel zu lösen, während ihr das Mutterschiff verbessert, um immer anspruchsvollere Missionen zu bewältigen. Der Nervenkitzel der Entdeckung und das Wunder des Unbekannten erwarten euch!"
     },
     "credits": {
-      "title": "Projektteam"
+      "title": "Projektteam",
+      "SS24": "Sommersemester 2024",
+      "WS2425": "Wintersemester 2024/25"
     }
   },
   "leaderboard": {

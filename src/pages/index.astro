@@ -1,11 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { astroI18n, t } from "astro-i18n"
+import { t } from "astro-i18n"
 import Section from "../components/Section.astro";
 import Credits from "../components/Credits.astro";
-import Leaderboard from "../components/leaderboard"
 
-import { Image, Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import logo from "../img/logo.png";
 import SocialPost from "../components/SocialPost.astro";
 
@@ -26,18 +25,17 @@ import Post9_Img2 from "../img/social/Post9/Img2.png"
 ---
 
 <Layout title={t("page.title")}>
-	<div class="flex justify-center">
-	</div>
-	<h1 class="text-3xl font-bold mb-3">
-		<span class="bg-gradient-to-br from-primary to-accent text-transparent bg-clip-text">
-			{t("welcome")}
-		</span>
-	</h1>
-
-	<Section title={t("section.intro.title")} content={t("section.intro.description")} inverse={true}>
-		<Picture class="w-full min-w-0 object-contain object-top" src={logo} alt="Project Mothership"
-		         formats={["webp","jpeg"]} widths={[640, 720, 1080, 2560]} />
-	</Section>
+	<section class="mb-6">
+		<div class="flex justify-center my-6">
+			<Image class="w-full max-w-3xl" src={logo} widths={[320, 640, 1080]} alt="Project Mothership" />
+		</div>
+		<h1 class="text-3xl lg:text-5xl font-bold mb-3">
+			<span class="bg-gradient-to-br from-primary to-accent text-transparent bg-clip-text">
+				{t("welcome")}
+			</span>
+		</h1>
+		<p class="text-lg lg:text-xl leading-snug">{t("section.intro.description")}</p>
+	</section>
 
 	<section class="columns-md gap-8 mb-4">
 		<SocialPost title="Enemies" date={new Date("2024-06-28")}>
