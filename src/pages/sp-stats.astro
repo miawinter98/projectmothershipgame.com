@@ -1,0 +1,94 @@
+---
+import "../styles/style_sp.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Project Mothership Statistics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Login Section -->
+    <div
+      id="login-container"
+      class="flex flex-col items-center justify-center h-screen"
+    >
+      <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+        <h1 class="text-2xl font-bold text-center mb-6">Statistics</h1>
+        <form id="login-form" class="space-y-4">
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            required
+            class="block w-full border border-gray-300 rounded-lg p-3 focus:ring focus:ring-blue-300"
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+            class="block w-full border border-gray-300 rounded-lg p-3 focus:ring focus:ring-blue-300"
+          />
+          <button
+            type="submit"
+            class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition"
+          >
+            Login
+          </button>
+        </form>
+        <p
+          id="error-message"
+          class="text-red-500 text-sm mt-4 text-center hidden"
+        >
+          Invalid credentials!
+        </p>
+      </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div
+      id="stats-container"
+      class="hidden flex flex-col items-center h-screen"
+    >
+      <h1 class="text-3xl font-bold mb-6">Project Mothership Statistics</h1>
+      <div class="w-3/4 h-3/4 bg-white shadow-lg rounded-lg p-6">
+        <canvas id="chart" class="w-full h-full"></canvas>
+      </div>
+    </div>
+
+    <script>
+      // @ts-nocheck
+      import { loadStats } from "./lib/supabase";
+
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          const validUsername =
+            import.meta.env.PUBLIC_STATS_USER || process.env.PUBLIC_STATS_USER;
+          const validPassword =
+            import.meta.env.PUBLIC_STATS_PW || process.env.PUBLIC_STATS_PW;
+
+          if (username === validUsername && password === validPassword) {
+            document.getElementById("login-container").classList.add("hidden");
+            document
+              .getElementById("stats-container")
+              .classList.remove("hidden");
+            await loadStats();
+          } else {
+            document.getElementById("error-message").classList.remove("hidden");
+          }
+        });
+    </script>
+  </body>
+</html>
