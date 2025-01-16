@@ -1,9 +1,45 @@
 # The Docker image that will be used to build your app
 image: node:18
+
+# Define stages
+stages:
+  - test
+  - build
+
 # Functions that should be executed before the build script is run
 before_script:
   - npm i
+
+# Test the Supabase and Stats API connection
+test_connections:
+  stage: test
+  script:
+    - |
+      echo "Testing environment variables for login..."
+      if [ -z "$PUBLIC_STATS_USER" ] || [ -z "$PUBLIC_STATS_PW" ]; then
+        echo "Error: PUBLIC_STATS_USER or PUBLIC_STATS_PW is not set.";
+        exit 1;
+      else
+        echo "Login environment variables are correctly set.";
+      fi
+    - echo "Testing Supabase connection..."
+    - |
+      RESPONSE=$(curl -s -X GET "$PUBLIC_SUPABASE_URL/rest/v1/stats" \
+      -H "apikey: $PUBLIC_SUPABASE_KEY")
+      echo "Response: $RESPONSE"
+      if [ -z "$RESPONSE" ]; then
+        echo "Supabase connection failed";
+        exit 1;
+      else
+        echo "Supabase connection successful";
+      fi
+  rules:
+    - when: never # is only used for debugging purposes
+    #- if: $CI_COMMIT_REF_NAME != ""  # allow all branches
+
+# Build and deploy the app to GitLab Pages
 pages:
+  stage: build
   script:
     - npm run build
   artifacts:

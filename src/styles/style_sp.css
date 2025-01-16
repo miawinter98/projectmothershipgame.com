@@ -1,0 +1,147 @@
+@import '@fontsource/pixelify-sans';
+@import '@fontsource/chakra-petch';
+
+@font-face{
+    font-family: 'GalacticoBasic';
+    src: url('/fonts/GalacticoBasic.otf');
+}
+
+
+html {
+    background-color: #090d14;
+  }
+  
+  body {
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+  
+  main {
+    border: #4deeea;
+    border-style: double;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  h1 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.alientitle {
+
+    font-family: 'GalacticoBasic';
+    color: #4deeea;
+  }
+
+.button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: #4deeea;
+    border-style: double;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button.share {
+    border: #4deeea;
+    border-style: double;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button.share:hover {
+    background-color: #059669;
+}
+
+.button.yes {
+    color: white;
+}
+
+.button.yes:hover {
+    background-color: #2563eb;
+}
+
+.button.no {
+  color: white;
+}
+
+.button.no:hover {
+  background-color: #dc2626;
+}
+
+.button:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.button:disabled:hover {
+  background-color: #ddd;
+  color: #aaa;
+}
+
+
+
+
+#confirmation-text {
+    font-size: 14px;
+    margin-top: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media (max-width: 640px) {
+  body {
+      font-size: 14px;
+  }
+
+  #typewriter {
+      font-size: 24px;
+      word-wrap: break-word;
+  }
+
+  .button {
+      padding: 8px 12px;
+      font-size: 16px;
+  }
+
+  video {
+      max-width: 100%;
+      height: auto;
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      user-select: none;
+  }
+
+  main {
+      padding: 2rem;
+      max-width: 90%;
+      border-width: 4px;
+      font-size: 18px;
+  }
+
+  h1 {
+      font-size: 2.8rem;
+      margin: 1.5rem 0;
+  }
+}
