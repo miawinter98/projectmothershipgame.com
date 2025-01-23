@@ -22,6 +22,8 @@ import Post8_Img3 from "../img/social/Post8/Img3.png"
 import Post8_Img4 from "../img/social/Post8/Img4.png"
 import Post9_Img1 from "../img/social/Post9/Img1.png"
 import Post9_Img2 from "../img/social/Post9/Img2.png"
+
+import Trailer from "./_trailer.mp4";
 ---
 
 <Layout title={t("page.title")}>
@@ -35,6 +37,12 @@ import Post9_Img2 from "../img/social/Post9/Img2.png"
 			</span>
 		</h1>
 		<p class="text-lg lg:text-xl leading-snug">{t("section.intro.description")}</p>
+	</section>
+
+	<section class="mb-6">
+		<video controls class="w-full max-w-3xl mx-auto aspect-video">
+			<source src={Trailer} type="video/mp4">
+		</video>
 	</section>
 
 	<section class="columns-md gap-8 mb-4">
